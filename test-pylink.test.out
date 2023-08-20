@@ -1,0 +1,23 @@
+make[1]: Entering directory '/home/me/checkmk/tests'
+make -C .. protobuf-files
+make[2]: Entering directory '/home/me/checkmk'
+make[2]: Nothing to be done for 'protobuf-files'.
+make[2]: Leaving directory '/home/me/checkmk'
+cd ..; /home/me/checkmk/scripts/run-pipenv run pylint --jobs=6  $(/home/me/checkmk/scripts/find-python-files)
+make[2]: Entering directory '/home/me/checkmk'
+make[2]: Leaving directory '/home/me/checkmk'
+
+------------------------------------
+Your code has been rated at 10.00/10
+
+make[1]: Leaving directory '/home/me/checkmk/tests'
+1657.55user 117.99system 5:01.83elapsed 588%CPU (0avgtext+0avgdata 1017832maxresident)k
+0inputs+8outputs (0major+2347398minor)pagefaults 0swaps
+make[1]: Entering directory '/home/me/checkmk/tests'
+make -C .. protobuf-files
+make[2]: Entering directory '/home/me/checkmk'
+make[2]: Nothing to be done for 'protobuf-files'.
+make[2]: Leaving directory '/home/me/checkmk'
+cd ..; /home/me/checkmk/scripts/run-pipenv run pylint --jobs=6  $(/home/me/checkmk/scripts/find-python-files)
+make[2]: Entering directory '/home/me/checkmk'
+make[2]: Leaving directory '/home/me/checkmk'

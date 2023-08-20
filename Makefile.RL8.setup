@@ -161,3 +161,16 @@ RLrpm: RL8-setup clean dist rpm
 
 RL-clean:
 	@rm -rf Python-3.9.8*
+
+PHONY: test-pylint test-bandit test-unit test-format-python test-mypy-raw
+tests: test-pylint test-bandit test-unit test-format-python test-mypy-raw
+test-pylint:
+	time make -C tests test-pylint  2>&1 | tee -a test-pylink.test.out
+test-bandit:
+	time make -C tests test-bandit  2>&1 | tee -a test-bandit.test.out
+test-unit:
+	time make -C tests test-unit  2>&1 | tee -a test-unit.test.out
+test-format-python:
+	time make -C tests test-python  2>&1 | tee -a test-python.test.out
+test-mypy-raw:
+	time make -C tests test-mypy-raw  2>&1 | tee -a test-mypy-raw.out
