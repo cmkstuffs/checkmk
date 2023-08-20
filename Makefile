@@ -360,6 +360,7 @@ setup:
 	    clang-tidy-$(CLANG_VERSION) \
 	    clang-tools-$(CLANG_VERSION) \
 	    clangd-$(CLANG_VERSION) \
+	    rpm \
 	    cmake \
 	    curl \
 	    direnv \

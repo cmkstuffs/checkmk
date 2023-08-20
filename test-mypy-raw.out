@@ -1,0 +1,15 @@
+make[1]: Entering directory '/home/me/checkmk/tests'
+make test-mypy ADDITIONAL_MYPY_ARGS="--config-file=/home/me/checkmk/mypy-raw.ini"
+make[2]: Entering directory '/home/me/checkmk/tests'
+make -C .. protobuf-files
+make[3]: Entering directory '/home/me/checkmk'
+make[3]: Nothing to be done for 'protobuf-files'.
+make[3]: Leaving directory '/home/me/checkmk'
+cd .. ; scripts/run-mypy  --config-file=/home/me/checkmk/mypy-raw.ini $(/home/me/checkmk/scripts/find-python-files)
+make[3]: Entering directory '/home/me/checkmk'
+make[3]: Leaving directory '/home/me/checkmk'
+Success: no issues found in 5965 source files
+make[2]: Leaving directory '/home/me/checkmk/tests'
+make[1]: Leaving directory '/home/me/checkmk/tests'
+194.03user 3.80system 3:17.97elapsed 99%CPU (0avgtext+0avgdata 1536992maxresident)k
+528inputs+430008outputs (3major+467774minor)pagefaults 0swaps

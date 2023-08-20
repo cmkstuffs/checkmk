@@ -1,0 +1,68 @@
+make[1]: Entering directory '/home/me/checkmk/tests'
+( echo -n -e "[bandit]\ntargets: "; \
+  /home/me/checkmk/scripts/find-python-files | tr '\n' ',' | sed 's/,$//'; \
+  echo ) > bandit.ini
+( echo exclude: /tests >> bandit.ini )
+/home/me/checkmk/scripts/run-pipenv run bandit -c ../bandit.yaml -r -ll --ini bandit.ini 
+make[2]: Entering directory '/home/me/checkmk'
+make[2]: Leaving directory '/home/me/checkmk'
+[main]	INFO	Using ini file for selected targets
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: B108,B302,B608,B601,B314,B323,B318,B415,B104
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[main]	INFO	using config: ../bandit.yaml
+[main]	INFO	running on Python 3.11.4
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 69
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 731
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 139
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 288
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 130
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 694
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 130
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 139
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 66
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 67
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 115
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 617
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 623
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 623
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 247
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 106
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 132
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 132
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 63
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 63
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 63
+[tester]	WARNING	nosec encountered (B605), but no failed test on line 579
+[tester]	WARNING	nosec encountered (B605), but no failed test on line 582
+[tester]	WARNING	nosec encountered (B605), but no failed test on line 807
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 288
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 288
+[tester]	WARNING	nosec encountered (B102), but no failed test on line 288
+Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:01:01
+Run started:2023-08-20 12:11:53.344702
+
+Test results:
+	No issues identified.
+
+Code scanned:
+	Total lines of code: 519525
+	Total lines skipped (#nosec): 11
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 105
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 891
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 19
+		High: 872
+Files skipped (0):
+make[1]: Leaving directory '/home/me/checkmk/tests'
+62.26user 1.12system 1:03.31elapsed 100%CPU (0avgtext+0avgdata 89020maxresident)k
+184inputs+840outputs (0major+65971minor)pagefaults 0swaps

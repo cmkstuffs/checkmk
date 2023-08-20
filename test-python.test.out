@@ -1,0 +1,6 @@
+make[1]: Entering directory '/home/me/checkmk/tests'
+make[1]: *** No rule to make target 'test-python'.  Stop.
+make[1]: Leaving directory '/home/me/checkmk/tests'
+Command exited with non-zero status 2
+0.00user 0.00system 0:00.01elapsed 91%CPU (0avgtext+0avgdata 3460maxresident)k
+0inputs+0outputs (0major+955minor)pagefaults 0swaps
