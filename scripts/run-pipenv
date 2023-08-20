@@ -49,4 +49,4 @@ PIPENV_VENV_IN_PROJECT=true \
     PIPENV_NO_INHERIT=true \
     PIPENV_PIPFILE="$REPO_PATH/Pipfile" \
     PIPENV_IGNORE_VIRTUALENVS=1 \
-    pipenv "$@"
+    ${HOME}/.local/bin/pipenv "$@"
