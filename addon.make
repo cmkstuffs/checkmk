@@ -97,6 +97,19 @@ RL8-setup:
 	autoconf
 
 
+python-3.11.2-home:
+	rm -rf ${HOME}/.local/*
+	[ -f ./Python-3.11.2.tgz ] || wget https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz
+	sudo rm -rf Python-3.11.2 
+	tar xf Python-3.11.2.tgz
+	(cd  Python-3.11.2;./configure --enable-optimizations --prefix=${HOME}/.local  &&  make -j8 && make install)
+	ln -s ${HOME}/.local/bin/pip3.11  ${HOME}/.local/bin/pip
+	sudo ln -sf ${HOME}/.local/bin/python3 /bin/python
+	${HOME}/.local/bin/python3 -m pip install pipenv six
+	${HOME}/.local/bin/python3 -m pip install --upgrade pip
+	${HOME}/.local/bin/pip3 list |grep pipenv
+
+
 python-3.11.1-home:
 	rm -rf ${HOME}/.local/*
 	[ -f ./Python-3.11.1.tgz ] || wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz
