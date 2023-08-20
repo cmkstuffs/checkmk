@@ -96,6 +96,35 @@ RL8-setup:
 	libcurl-devel \
 	autoconf
 
+
+python-3.11.1-home:
+	rm -rf ${HOME}/.local/*
+	[ -f ./Python-3.11.1.tgz ] || wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz
+	sudo rm -rf Python-3.11.1 
+	tar xf Python-3.11.1.tgz
+	(cd  Python-3.11.1;./configure --enable-optimizations --prefix=${HOME}/.local  &&  make -j8 && make install)
+	ln -s ${HOME}/.local/bin/pip3.11  ${HOME}/.local/bin/pip
+#	ln -s ${HOME}/.local/bin/pip3.11  ${HOME}/.local/bin/pip3
+	ln -sf ${HOME}/.local/bin/python3 /bin/python
+	${HOME}/.local/bin/python3 -m pip install pipenv six
+	${HOME}/.local/bin/python3 -m pip install --upgrade pip
+	${HOME}/.local/bin/pip3 list |grep pipenv
+
+python-3.11.1-local:
+#	[ -f /usr/local/bin/pip3 ]   || sudo rm -f /usr/local/bin/p*  /usr/local/bin/idle* /usr/local/bin/2to*
+	sudo rm -rf /usr/local/bin/*
+	[ -f ./Python-3.11.1.tgz ] || wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz
+	sudo rm -rf Python-3.11.1 
+	tar xf Python-3.11.1.tgz
+	(cd  Python-3.11.1;./configure --enable-optimizations &&  make -j6 && sudo make install)
+	sudo ln -s /usr/local/bin/pip3.11  /usr/local/bin/pip
+	sudo ln -s /usr/local/bin/pip3.11  /usr/local/bin/pip3
+	sudo ln -sf /usr/local/bin/python3 /bin/python
+	sudo /usr/local/bin/python3 -m pip install pipenv six
+	sudo /usr/local/bin/python3 -m pip install --upgrade pip
+	/usr/local/bin/pip3 list |grep pipenv
+#	cp Pipfile.RL8 Pipfile
+
 python-3.9.8-local:
 	[ -f ./Python-3.9.8.tgz ] || wget https://www.python.org/ftp/python/3.9.8/Python-3.9.8.tgz
 	rm -rf Python-3.9.8 
@@ -105,7 +134,7 @@ python-3.9.8-local:
 	sudo ln -sf /usr/local/bin/python3 /bin/python
 	/usr/local/bin/python3 -m pip install pipenv six
 	/usr/local/bin/pip3 list |grep pipenv
-	cp Pipfile.RL8 Pipfile
+#	cp Pipfile.RL8 Pipfile
 
 
 python-3.9.8:
