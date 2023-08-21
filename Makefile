@@ -361,6 +361,7 @@ setup:
 	    clang-tools-$(CLANG_VERSION) \
 	    clangd-$(CLANG_VERSION) \
 	    rpm \
+	    g++-13 \
 	    cmake \
 	    curl \
 	    direnv \
